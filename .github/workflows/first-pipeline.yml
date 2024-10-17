@@ -2,10 +2,10 @@ name: CI Pipeline
 
 on:
   push:
-    branch:
+    branches:
       - main
 
-jbs:
+jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -17,4 +17,3 @@ jbs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-o
