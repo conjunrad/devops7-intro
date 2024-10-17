@@ -29,5 +29,5 @@ jobs:
       - name: Send build to EC2
         run: |
           rsync -e "ssh -o StrictHostKeyChecking=no \
-            -i ~/.ssh/id_rsa -az \
+            -i ~/.ssh/id_rsa" -az \
             ./public/index.html ubuntu@{{ env.SERVER_IP }}:/var/www/html/index.nginx-debian.html"
