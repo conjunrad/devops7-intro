@@ -23,7 +23,7 @@ jobs:
 
       - name: Write private key to file
         run: |
-          mkdir -p ~/.ssh/
+          mkdir -p ~/.ssh
           echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa && eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa
 
       - name: Send build to EC2
